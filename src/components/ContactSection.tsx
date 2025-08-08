@@ -35,11 +35,9 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-background">
+    <section id="contact" className="relative py-20 bg-background">
+      <BackToTopButton />
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-end mb-6">
-          <BackToTopButton />
-        </div>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
             Get in Touch

@@ -11,7 +11,7 @@ export const BackToTopButton = () => {
       onClick={scrollToTop}
       variant="outline"
       size="icon"
-      className="rounded-full bg-card/80 backdrop-blur-sm border-border/50 hover:bg-accent/80 transition-all duration-300 shadow-soft h-12 w-12"
+      className="absolute bottom-6 right-6 rounded-full bg-card/80 backdrop-blur-sm border-border/50 hover:bg-accent/80 transition-all duration-300 shadow-soft h-12 w-12 z-10"
       aria-label="Back to top"
     >
       <ChevronUp className="h-5 w-5" />
