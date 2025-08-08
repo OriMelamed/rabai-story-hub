@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { BackToTopButton } from "@/components/ui/BackToTopButton";
 
 export const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -36,6 +37,9 @@ export const ContactSection = () => {
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-6">
+        <div className="flex justify-end mb-6">
+          <BackToTopButton />
+        </div>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
             Get in Touch

@@ -1,9 +1,13 @@
 import rabbiPortrait from "@/assets/rabbi-portrait.jpg";
+import { BackToTopButton } from "@/components/ui/BackToTopButton";
 
 export const AboutSection = () => {
   return (
     <section id="about" className="py-20 subtle-gradient">
       <div className="max-w-7xl mx-auto px-6">
+        <div className="flex justify-end mb-6">
+          <BackToTopButton />
+        </div>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="space-y-6 animate-fade-in">

@@ -1,6 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, BookOpen, Users } from "lucide-react";
+import { BackToTopButton } from "@/components/ui/BackToTopButton";
 import torahScroll from "@/assets/torah-scroll.jpg";
 import shabbatTable from "@/assets/shabbat-table.jpg";
 import studyGroup from "@/assets/study-group.jpg";
@@ -9,6 +10,9 @@ export const ServicesSection = () => {
   return (
     <section id="services" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-6">
+        <div className="flex justify-end mb-6">
+          <BackToTopButton />
+        </div>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
             Our Services & Programs
