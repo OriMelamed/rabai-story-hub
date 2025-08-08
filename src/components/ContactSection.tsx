@@ -53,22 +53,6 @@ export const ContactSection = () => {
             <Card className="shadow-soft border-0 bg-card/50">
               <CardHeader>
                 <CardTitle className="text-xl text-primary flex items-center gap-2">
-                  <MapPin className="w-5 h-5" />
-                  Location
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Temple Beth Shalom<br />
-                  123 Spiritual Way<br />
-                  Community City, CC 12345
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-soft border-0 bg-card/50">
-              <CardHeader>
-                <CardTitle className="text-xl text-primary flex items-center gap-2">
                   <Phone className="w-5 h-5" />
                   Phone
                 </CardTitle>
@@ -91,23 +75,6 @@ export const ContactSection = () => {
                 <p className="text-muted-foreground">
                   rabbi@templeshalom.org
                 </p>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-soft border-0 bg-card/50">
-              <CardHeader>
-                <CardTitle className="text-xl text-primary flex items-center gap-2">
-                  <Clock className="w-5 h-5" />
-                  Office Hours
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-1 text-muted-foreground">
-                  <p>Monday - Thursday: 9:00 AM - 5:00 PM</p>
-                  <p>Friday: 9:00 AM - 3:00 PM</p>
-                  <p>Saturday: By appointment</p>
-                  <p>Sunday: 10:00 AM - 2:00 PM</p>
-                </div>
               </CardContent>
             </Card>
           </div>
