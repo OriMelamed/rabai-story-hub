@@ -15,20 +15,20 @@ export const HeroSection = () => {
       <div className="absolute inset-0 hero-gradient opacity-75"></div>
       
       {/* Language Switcher */}
-      <div className="absolute top-6 right-6 z-20">
+      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20">
         <LanguageSwitcher />
       </div>
       
       {/* Content */}
-      <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in text-balance">
+      <div className="relative z-10 text-center text-white px-4 sm:px-6 max-w-5xl mx-auto">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 animate-fade-in text-balance">
           {t('hero.title')}
           <span className="block warm-gradient bg-clip-text text-transparent">
             {t('hero.subtitle')}
           </span>
         </h1>
         
-        <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed opacity-90 animate-fade-in text-balance">
+        <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed opacity-90 animate-fade-in text-balance">
           {t('hero.description')}
         </p>
         

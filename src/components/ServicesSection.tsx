@@ -11,50 +11,53 @@ export const ServicesSection = () => {
   const { t } = useTranslation();
   
   return (
-    <section id="services" className="relative py-20 bg-background">
+    <section id="services" className="relative py-12 sm:py-16 md:py-20 bg-background">
       <BackToTopButton />
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 sm:mb-6">
             {t('services.title')}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
             {t('services.description')}
           </p>
         </div>
 
         <Tabs defaultValue="worship" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 mb-8 h-auto p-1 bg-muted/50">
+          <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-0 mb-6 sm:mb-8 h-auto p-1 bg-muted/50">
             <TabsTrigger 
               value="worship" 
-              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-4"
+              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-3 sm:py-4 text-sm sm:text-base flex items-center justify-center gap-2"
             >
-              <Calendar className="w-5 h-5 mr-2" />
-              {t('services.worship.title')}
+              <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="hidden sm:inline">{t('services.worship.title')}</span>
+              <span className="sm:hidden">Worship</span>
             </TabsTrigger>
             <TabsTrigger 
               value="learning"
-              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-4"
+              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-3 sm:py-4 text-sm sm:text-base flex items-center justify-center gap-2"
             >
-              <BookOpen className="w-5 h-5 mr-2" />
-              {t('services.learning.title')}
+              <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="hidden sm:inline">{t('services.learning.title')}</span>
+              <span className="sm:hidden">Learning</span>
             </TabsTrigger>
             <TabsTrigger 
               value="community"
-              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-4"
+              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-3 sm:py-4 text-sm sm:text-base flex items-center justify-center gap-2"
             >
-              <Users className="w-5 h-5 mr-2" />
-              {t('services.community.title')}
+              <Users className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="hidden sm:inline">{t('services.community.title')}</span>
+              <span className="sm:hidden">Community</span>
             </TabsTrigger>
           </TabsList>
 
           <TabsContent value="worship" className="animate-fade-in">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
+            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
+              <div className="order-2 md:order-1">
                 <Card className="shadow-warm border-0 bg-card/50">
                   <CardHeader>
-                    <CardTitle className="text-2xl text-primary">Sacred Worship</CardTitle>
-                    <CardDescription className="text-lg">
+                    <CardTitle className="text-xl sm:text-2xl text-primary">Sacred Worship</CardTitle>
+                    <CardDescription className="text-base sm:text-lg">
                       Join us for meaningful prayer experiences that connect you with tradition and community
                     </CardDescription>
                   </CardHeader>
@@ -80,30 +83,30 @@ export const ServicesSection = () => {
                   </CardContent>
                 </Card>
               </div>
-              <div>
+              <div className="order-1 md:order-2">
                 <img 
                   src={torahScroll}
                   alt="Torah Scroll"
-                  className="w-full rounded-xl shadow-soft"
+                  className="w-full rounded-xl shadow-soft max-w-sm sm:max-w-md mx-auto"
                 />
               </div>
             </div>
           </TabsContent>
 
           <TabsContent value="learning" className="animate-fade-in">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
+            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
+              <div className="order-1">
                 <img 
                   src={studyGroup}
                   alt="Study Group"
-                  className="w-full rounded-xl shadow-soft"
+                  className="w-full rounded-xl shadow-soft max-w-sm sm:max-w-md mx-auto"
                 />
               </div>
-              <div>
+              <div className="order-2">
                 <Card className="shadow-warm border-0 bg-card/50">
                   <CardHeader>
-                    <CardTitle className="text-2xl text-primary">Torah Study & Learning</CardTitle>
-                    <CardDescription className="text-lg">
+                    <CardTitle className="text-xl sm:text-2xl text-primary">Torah Study & Learning</CardTitle>
+                    <CardDescription className="text-base sm:text-lg">
                       Deepen your understanding through guided study and discussion
                     </CardDescription>
                   </CardHeader>
@@ -129,12 +132,12 @@ export const ServicesSection = () => {
           </TabsContent>
 
           <TabsContent value="community" className="animate-fade-in">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
+            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
+              <div className="order-2 md:order-1">
                 <Card className="shadow-warm border-0 bg-card/50">
                   <CardHeader>
-                    <CardTitle className="text-2xl text-primary">Community Gatherings</CardTitle>
-                    <CardDescription className="text-lg">
+                    <CardTitle className="text-xl sm:text-2xl text-primary">Community Gatherings</CardTitle>
+                    <CardDescription className="text-base sm:text-lg">
                       Build lasting friendships and create meaningful memories together
                     </CardDescription>
                   </CardHeader>
@@ -160,11 +163,11 @@ export const ServicesSection = () => {
                   </CardContent>
                 </Card>
               </div>
-              <div>
+              <div className="order-1 md:order-2">
                 <img 
                   src={shabbatTable}
                   alt="Shabbat Table"
-                  className="w-full rounded-xl shadow-soft"
+                  className="w-full rounded-xl shadow-soft max-w-sm sm:max-w-md mx-auto"
                 />
               </div>
             </div>

@@ -46,14 +46,14 @@ export const TestimonialsSection = () => {
   const { t } = useTranslation();
   
   return (
-    <section id="testimonials" className="relative py-20 subtle-gradient">
+    <section id="testimonials" className="relative py-12 sm:py-16 md:py-20 subtle-gradient">
       <BackToTopButton />
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 sm:mb-6">
             {t('testimonials.title')}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
             {t('testimonials.description')}
           </p>
         </div>
@@ -61,7 +61,7 @@ export const TestimonialsSection = () => {
         <Carousel className="w-full" opts={{ align: "start", loop: true }}>
           <CarouselContent className="-ml-2 md:-ml-4">
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                 <Card className="h-full shadow-warm border-0 bg-card/70 backdrop-blur-sm">
                   <CardContent className="p-6 flex flex-col h-full">
                     <div className="flex items-center gap-1 mb-4">
