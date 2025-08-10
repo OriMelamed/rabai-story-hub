@@ -2,21 +2,24 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, BookOpen, Users } from "lucide-react";
 import { BackToTopButton } from "@/components/ui/BackToTopButton";
+import { useTranslation } from 'react-i18next';
 import torahScroll from "@/assets/torah-scroll.jpg";
 import shabbatTable from "@/assets/shabbat-table.jpg";
 import studyGroup from "@/assets/study-group.jpg";
 
 export const ServicesSection = () => {
+  const { t } = useTranslation();
+  
   return (
     <section id="services" className="relative py-20 bg-background">
       <BackToTopButton />
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-            Our Services & Programs
+            {t('services.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
-            Discover the many ways you can connect with your faith and community
+            {t('services.description')}
           </p>
         </div>
 
@@ -27,21 +30,21 @@ export const ServicesSection = () => {
               className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-4"
             >
               <Calendar className="w-5 h-5 mr-2" />
-              Worship Services
+              {t('services.worship.title')}
             </TabsTrigger>
             <TabsTrigger 
               value="learning"
               className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-4"
             >
               <BookOpen className="w-5 h-5 mr-2" />
-              Learning Programs
+              {t('services.learning.title')}
             </TabsTrigger>
             <TabsTrigger 
               value="community"
               className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-4"
             >
               <Users className="w-5 h-5 mr-2" />
-              Community Events
+              {t('services.community.title')}
             </TabsTrigger>
           </TabsList>
 

@@ -2,6 +2,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
 import { BackToTopButton } from "@/components/ui/BackToTopButton";
+import { useTranslation } from 'react-i18next';
 
 const testimonials = [
   {
@@ -42,16 +43,18 @@ const testimonials = [
 ];
 
 export const TestimonialsSection = () => {
+  const { t } = useTranslation();
+  
   return (
     <section id="testimonials" className="relative py-20 subtle-gradient">
       <BackToTopButton />
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-            What Our Community Says
+            {t('testimonials.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
-            Hear from our members about their meaningful experiences and spiritual growth
+            {t('testimonials.description')}
           </p>
         </div>
 

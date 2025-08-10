@@ -1,7 +1,10 @@
 import rabbiPortrait from "@/assets/rabbi-portrait.jpg";
 import { BackToTopButton } from "@/components/ui/BackToTopButton";
+import { useTranslation } from 'react-i18next';
 
 export const AboutSection = () => {
+  const { t } = useTranslation();
+  
   return (
     <section id="about" className="relative py-20 subtle-gradient">
       <BackToTopButton />
@@ -10,44 +13,35 @@ export const AboutSection = () => {
           {/* Text Content */}
           <div className="space-y-6 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              Meet Rabbi David Cohen
+              {t('about.title')}
             </h2>
             
             <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
               <p>
-                For over two decades, Rabbi David Cohen has served our community with 
-                unwavering dedication, wisdom, and compassion. His journey in Jewish 
-                scholarship began at the prestigious Hebrew Union College, where he 
-                earned his rabbinical ordination with highest honors.
+                {t('about.description1')}
               </p>
               
               <p>
-                Rabbi Cohen believes in the power of accessible Torah learning and 
-                creates an inclusive environment where people of all backgrounds can 
-                explore their Jewish heritage. His teachings emphasize the practical 
-                application of ancient wisdom to modern life challenges.
+                {t('about.description2')}
               </p>
               
               <p>
-                Beyond his role as spiritual leader, Rabbi Cohen is a published author, 
-                community advocate, and devoted family man. He has been instrumental 
-                in building bridges between different faith communities and promoting 
-                social justice initiatives throughout the region.
+                {t('about.description3')}
               </p>
             </div>
             
             <div className="flex flex-wrap gap-4 pt-4">
               <div className="bg-card rounded-lg p-4 shadow-soft border">
                 <div className="text-2xl font-bold text-warm-gold">20+</div>
-                <div className="text-sm text-muted-foreground">Years of Service</div>
+                <div className="text-sm text-muted-foreground">{t('about.stats.years')}</div>
               </div>
               <div className="bg-card rounded-lg p-4 shadow-soft border">
                 <div className="text-2xl font-bold text-warm-gold">500+</div>
-                <div className="text-sm text-muted-foreground">Families Served</div>
+                <div className="text-sm text-muted-foreground">{t('about.stats.families')}</div>
               </div>
               <div className="bg-card rounded-lg p-4 shadow-soft border">
                 <div className="text-2xl font-bold text-warm-gold">50+</div>
-                <div className="text-sm text-muted-foreground">Community Programs</div>
+                <div className="text-sm text-muted-foreground">{t('about.stats.programs')}</div>
               </div>
             </div>
           </div>
