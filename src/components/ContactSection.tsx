@@ -49,7 +49,6 @@ export const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Contact Information */}
           <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
             <Card className="shadow-soft border-0 bg-card/50">
@@ -80,81 +79,6 @@ export const ContactSection = () => {
               </CardContent>
             </Card>
           </div>
-
-          {/* Contact Form */}
-          <div className="lg:col-span-2 order-1 lg:order-2">
-            <Card className="shadow-warm border-0 bg-card/70 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-xl sm:text-2xl text-primary">{t('contact.form.title')}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">{t('contact.form.name')}</Label>
-                      <Input 
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder={t('contact.form.namePlaceholder')}
-                        required
-                        className="border-border/50 focus:border-primary"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">{t('contact.form.email')}</Label>
-                      <Input 
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder={t('contact.form.emailPlaceholder')}
-                        required
-                        className="border-border/50 focus:border-primary"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">{t('contact.form.phone')}</Label>
-                    <Input 
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder={t('contact.form.phonePlaceholder')}
-                      className="border-border/50 focus:border-primary"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message">{t('contact.form.message')}</Label>
-                    <Textarea 
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder={t('contact.form.messagePlaceholder')}
-                      required
-                      rows={6}
-                      className="border-border/50 focus:border-primary resize-none"
-                    />
-                  </div>
-
-                  <Button 
-                    type="submit" 
-                    className="w-full warm-gradient text-white hover:opacity-90 transition-opacity text-base sm:text-lg py-4 sm:py-6"
-                  >
-                    {t('contact.form.submit')}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -6,9 +6,9 @@ import { useTranslation } from 'react-i18next';
 
 const testimonials = [
   {
-    name: "Sarah and Michael",
-    role: "Long-time Members",
-    image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=150&h=150&fit=crop&crop=face",
+    name: "מיכל ואורי מלמד",
+    role: "תושבי מודיעין",
+    image: "",
     text: "Rabbi Cohen has been our spiritual guide for over 15 years. His wisdom, compassion, and genuine care for each member of our community has transformed our understanding of faith and brought our family closer together.",
     rating: 5
   },
