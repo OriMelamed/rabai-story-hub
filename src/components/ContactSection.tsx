@@ -7,7 +7,7 @@ export const ContactSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="contact" className="relative py-8 sm:py-12 bg-background">
+    <section id="contact" className="relative py-8 sm:py-12 bg-gradient-to-b from-background via-sage-green/5 to-background border-t border-border/20">
       <BackToTopButton />
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-8">
