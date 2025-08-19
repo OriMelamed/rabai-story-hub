@@ -6,7 +6,7 @@ export const AboutSection = () => {
   const { t } = useTranslation();
   
   return (
-    <section id="about" className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-background via-muted/20 to-background">
+    <section id="about" className="relative py-12 sm:py-16 md:py-20 bg-slate-50 dark:bg-slate-900/50">
       <BackToTopButton />
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">

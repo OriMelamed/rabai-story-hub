@@ -46,7 +46,7 @@ export const TestimonialsSection = () => {
   const { t } = useTranslation();
   
   return (
-    <section id="testimonials" className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-background via-warm-gold/5 to-background">
+    <section id="testimonials" className="relative py-12 sm:py-16 md:py-20 bg-slate-50 dark:bg-slate-900/50">
       <BackToTopButton />
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16">

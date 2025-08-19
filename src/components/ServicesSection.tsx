@@ -11,7 +11,7 @@ export const ServicesSection = () => {
   const { t } = useTranslation();
   
   return (
-    <section id="services" className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-background via-primary/5 to-background border-t border-b border-border/20">
+    <section id="services" className="relative py-12 sm:py-16 md:py-20 bg-background">
       <BackToTopButton />
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16">
