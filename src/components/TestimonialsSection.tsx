@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 const testimonials = [
   {
-    name: "מיכל ואורי מלמד",
+    name: "משפחת מלמד",
     role: "תושבי מודיעין",
     text: "לקחנו את הרב להיות המוהל לבן שלנו אחריי היכרות רבת שנים וזכינו בברית מרגשת, נעימה ומקצועית. ממליצים בחום!",
     rating: 5
