@@ -3,20 +3,21 @@ import { BackToTopButton } from "@/components/ui/BackToTopButton";
 import { useTranslation } from 'react-i18next';
 
 export const AboutSection = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === 'he';
   
   return (
-    <section id="about" className="relative py-12 sm:py-16 md:py-20 bg-slate-50 dark:bg-slate-900/50">
+    <section id="about" className="relative py-12 sm:py-16 md:py-20 bg-slate-50 dark:bg-slate-900/50" dir={isRTL ? 'rtl' : 'ltr'}>
       <BackToTopButton />
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Text Content */}
-          <div className="space-y-4 sm:space-y-6 animate-fade-in order-2 lg:order-1">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 sm:mb-6">
+          <div className={`space-y-4 sm:space-y-6 animate-fade-in order-2 lg:order-1 ${isRTL ? 'text-right' : 'text-left'}`}>
+            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 sm:mb-6 ${isRTL ? 'text-right' : 'text-left'}`}>
               {t('about.title')}
             </h2>
             
-            <div className="space-y-3 sm:space-y-4 text-base sm:text-lg leading-relaxed text-muted-foreground">
+            <div className={`space-y-3 sm:space-y-4 text-base sm:text-lg leading-relaxed text-muted-foreground ${isRTL ? 'text-right' : 'text-left'}`}>
               <p>
                 {t('about.description1')}
               </p>
@@ -30,7 +31,7 @@ export const AboutSection = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-4">
+            {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-4">
               <div className="bg-card rounded-lg p-3 sm:p-4 shadow-soft border text-center">
                 <div className="text-xl sm:text-2xl font-bold text-warm-gold">20+</div>
                 <div className="text-xs sm:text-sm text-muted-foreground">{t('about.stats.years')}</div>
@@ -43,7 +44,7 @@ export const AboutSection = () => {
                 <div className="text-xl sm:text-2xl font-bold text-warm-gold">50+</div>
                 <div className="text-xs sm:text-sm text-muted-foreground">{t('about.stats.programs')}</div>
               </div>
-            </div>
+            </div> */}
           </div>
           
           {/* Image */}

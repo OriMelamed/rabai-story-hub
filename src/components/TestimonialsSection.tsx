@@ -8,91 +8,85 @@ const testimonials = [
   {
     name: "מיכל ואורי מלמד",
     role: "תושבי מודיעין",
-    image: "",
-    text: "Rabbi Cohen has been our spiritual guide for over 15 years. His wisdom, compassion, and genuine care for each member of our community has transformed our understanding of faith and brought our family closer together.",
+    text: "לקחנו את הרב להיות המוהל לבן שלנו אחריי היכרות רבת שנים וזכינו בברית מרגשת, נעימה ומקצועית. ממליצים בחום!",
     rating: 5
   },
   {
-    name: "Rebecca Goldman",
-    role: "Torah Study Participant",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
-    text: "The weekly Torah study sessions are incredibly enriching. Rabbi Cohen has a gift for making ancient wisdom relevant to our modern lives. I've grown so much spiritually through these discussions.",
+    name: "משפחת תורתי",
+    role: "תושבי מודיעין",
+    text: "כל כך חששנו לפני אך תודה לד' הילד היה רגוע מאוד",
     rating: 5
   },
   {
-    name: "David and Ruth",
-    role: "New Members",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    text: "As newcomers to the community, we were warmly welcomed from day one. Rabbi Cohen's inclusive approach and the congregation's kindness made us feel at home immediately. This is truly a special place.",
+    name: "משפחת שם טוב",
+    role: "תושבי ראשון לציון",
+    text: "הגענו אליך כי שמענו המלצות מחברים ואנחנו היינו מרוצים וכבר המלצנו לחברים נוספים",
     rating: 5
   },
   {
-    name: "Jennifer Chen",
-    role: "Adult Education Student",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-    text: "Rabbi Cohen's Hebrew classes are both challenging and inspiring. His patience and encouragement helped me connect with my heritage in ways I never thought possible. The learning environment is supportive and engaging.",
+    name: "משפחת א׳",
+    role: "תושבי ירושלים",
+    text: "בבית חולים הנחו אותנו לקחת מוהל עם ניסיון למצב רפואי מורכב, והתייעצנו איתך ויש לך מקצועיות וניסיון גם בבריתות מהסוג הזה, הכל עבר בשלום",
     rating: 5
   },
-  {
-    name: "The Johnson Family",
-    role: "Youth Program Participants",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-    text: "Our children love the youth programs here. Rabbi Cohen has created such meaningful experiences for them to learn about their faith while having fun. They always come home excited to share what they've learned.",
-    rating: 5
-  }
+
 ];
 
 export const TestimonialsSection = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === 'he';
   
   return (
-    <section id="testimonials" className="relative py-12 sm:py-16 md:py-20 bg-slate-50 dark:bg-slate-900/50">
-      <BackToTopButton />
+    <section id="testimonials" className="relative py-12 sm:py-16 md:py-20 bg-slate-50 dark:bg-slate-900/50" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 sm:mb-6">
+        <div className={`text-center mb-12 sm:mb-16 ${isRTL ? 'text-center' : 'text-center'}`}>
+          <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 sm:mb-6 ${isRTL ? 'text-center' : 'text-center'}`}>
             {t('testimonials.title')}
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
+          <p className={`text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto text-balance ${isRTL ? 'text-center' : 'text-center'}`}>
             {t('testimonials.description')}
           </p>
         </div>
 
-        <Carousel className="w-full" opts={{ align: "start", loop: true }}>
-          <CarouselContent className="-ml-2 md:-ml-4">
-            {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
-                <Card className="h-full shadow-warm border-0 bg-card/70 backdrop-blur-sm">
-                  <CardContent className="p-6 flex flex-col h-full">
-                    <div className="flex items-center gap-1 mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 fill-warm-gold text-warm-gold" />
-                      ))}
-                    </div>
-                    
-                    <blockquote className="text-muted-foreground italic mb-6 flex-grow">
-                      "{testimonial.text}"
-                    </blockquote>
-                    
-                    <div className="flex items-center gap-4">
-                      <img 
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        className="w-12 h-12 rounded-full object-cover shadow-soft"
-                      />
-                      <div>
-                        <div className="font-semibold text-primary">{testimonial.name}</div>
-                        <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+        <div className="relative">
+          <Carousel 
+            className="w-full" 
+            opts={{ 
+              align: "start", 
+              loop: true,
+              direction: isRTL ? 'rtl' : 'ltr'
+            }}
+          >
+            <CarouselContent className={isRTL ? "-mr-2 md:-mr-4" : "-ml-2 md:-ml-4"}>
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem key={index} className={isRTL ? "pr-2 md:pr-4 basis-full sm:basis-1/2 lg:basis-1/3" : "pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"}>
+                  <Card className="h-full shadow-warm border-0 bg-card/70 backdrop-blur-sm">
+                    <CardContent className="p-6 flex flex-col h-full">
+                      <div className="flex items-center gap-1 mb-4">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="w-5 h-5 fill-warm-gold text-warm-gold" />
+                        ))}
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden md:flex" />
-          <CarouselNext className="hidden md:flex" />
-        </Carousel>
+                      
+                      <blockquote className="text-muted-foreground italic mb-6 flex-grow">
+                        "{testimonial.text}"
+                      </blockquote>
+                      
+                      <div className="flex items-center gap-4">
+                        <div>
+                          <div className="font-semibold text-primary">{testimonial.name}</div>
+                          <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-12 h-9 w-9 bg-white/90 border shadow-lg hover:bg-white" />
+            <CarouselNext className="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-12 h-9 w-9 bg-white/90 border shadow-lg hover:bg-white" />
+          </Carousel>
+        </div>
       </div>
     </section>
   );
